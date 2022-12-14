@@ -23,16 +23,16 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
 }));
 
 export default function ToggleItem() {
-  const [alignment, setAlignment] = React.useState('left');
+  // const [alignment, setAlignment] = React.useState('left');
   const [formats, setFormats] = React.useState(() => ['italic']);
 
   const handleFormat = (event, newFormats) => {
     setFormats(newFormats);
   };
 
-  const handleAlignment = (event, newAlignment) => {
-    setAlignment(newAlignment);
-  };
+  // const handleAlignment = (event, newAlignment) => {
+  //   setAlignment(newAlignment);
+  // };
 
   return (
     <Paper

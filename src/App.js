@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import * as React from 'react';
 import ToggleItem from './components/toggleItem'
-import { Typography, Grid, Paper, Card, Chip } from '@mui/material';
+import { Grid } from '@mui/material';
 
 function App() {
   return (
