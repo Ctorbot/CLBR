@@ -22,7 +22,7 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
   },
 }));
 
-export default function ToggleItem() {
+export default function ToggleItem(props) {
   // const [alignment, setAlignment] = React.useState('left');
   const [formats, setFormats] = React.useState(() => ['italic']);
 
@@ -44,8 +44,8 @@ export default function ToggleItem() {
         flexWrap: 'wrap',
       }}
     >
-      <Typography align='center' sx={{ width: 1 }} item >Abyssal Orphan</Typography>
-      <img align='center' sx={{ width: 1 }} src={AbyssalOrphan} className="abyssal-orphan" alt="abyssalorphan" />
+      <Typography align='center' sx={{ width: 1 }} item >{props.name}</Typography>
+      <img align='center' sx={{ width: 1 }} src={AbyssalOrphan} className={props.name} alt={props.name} />
       <StyledToggleButtonGroup
         size="small"
         value={formats}

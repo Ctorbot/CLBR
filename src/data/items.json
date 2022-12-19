@@ -1,0 +1,133 @@
+
+[
+    {
+      "name": "Abyssal Sire",
+      "items": [
+        {
+            "name": "Abyssal orphan",
+            "value": 5,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Unsired",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Abyssal head",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Bludgeon spine",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Bludgeon claw",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Bludgeon axon",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Jar of miasma",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Abyssal dagger",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Abyssal whip",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        }
+      ]
+    },
+    {
+      "name": "Alchemical Hydra",
+      "items": [
+        {
+            "name": "Ikkle Hydra",
+            "value": 5,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Hydra's Claw",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Hydra tail",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Hydra leather",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Hydra's fang",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Hydra's eye",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Hydra's heart",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Dragon knife",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Dragon thrownaxe",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Jar of chemicals",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        },
+        {
+            "name": "Alchemical hydra heads",
+            "value": 2,
+            "austinCollected": false,
+            "dylanCollected": false
+        }
+      ]
+    }
+]
