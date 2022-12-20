@@ -3,27 +3,23 @@ import * as React from 'react';
 import ToggleItem from './components/toggleItem'
 import { Grid } from '@mui/material';
 import jsonData from './data/items.json';
+import withRoot from './withRoot';
 
 function App() {
   return (
-    <div>
-      {/* <Paper style={styles.paperContainer} square/> */}
-      <Grid container justifyContent="flex-start" alignItems="center" padding={2} spacing={2} columns={{ xs: 2, sm: 4, md: 8, lg: 10, xl: 12 }}>
+      <div>
         {jsonData.map((log => (
-          <Grid >
-            <h1 xs={2} sm={4} md={8} lg={10} xl={12} item>{log.name}</h1>
-            <Grid container padding={2} spacing={2} columns={{ xs: 2, sm: 4, md: 8, lg: 10, xl: 12 }}>
+          <div>
+            <h1>{log.name}</h1>
+            <Grid justifyContent="flex-start" flexWrap='wrap' xs={2} sm={4} md={8} lg={10} xl={12} padding={1} spacing={1} margin={0} container>
                 {log.items.map((item => (
-                  <Grid xs={1} sm={1} md={1} item>
-                    <ToggleItem name={item.name}/>
-                  </Grid>
+                  <ToggleItem key={item.name} name={item.name} image={item.image}/>
                 )))}
             </Grid>
-          </Grid>
+          </div>
         )))}
-      </Grid>
-    </div>
+      </div>
   );
 }
 
-export default App;
+export default withRoot(App);

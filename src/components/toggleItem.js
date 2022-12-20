@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import { Typography } from '@mui/material';
-import AbyssalOrphan from '../imgs/Abyssal_orphan.png'
+import { Paper, Typography } from '@mui/material';
+import withRoot from '../withRoot';
 
 const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
   '& .MuiToggleButtonGroup-grouped': {
@@ -22,7 +22,7 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
   },
 }));
 
-export default function ToggleItem(props) {
+function ToggleItem(props) {
   // const [alignment, setAlignment] = React.useState('left');
   const [formats, setFormats] = React.useState(() => ['italic']);
 
@@ -35,30 +35,37 @@ export default function ToggleItem(props) {
   // };
 
   return (
-    <Paper
+    <Grid
+      className={props.name}
       elevation={0}
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        border: (theme) => `1px solid ${theme.palette.divider}`,
-        flexWrap: 'wrap',
-      }}
+      justifyContent='flex-start'
+      flexWrap='wrap'
+      item
     >
-      <Typography align='center' sx={{ width: 1 }} item >{props.name}</Typography>
-      <img align='center' sx={{ width: 1 }} src={AbyssalOrphan} className={props.name} alt={props.name} />
-      <StyledToggleButtonGroup
-        size="small"
-        value={formats}
-        onChange={handleFormat}
-        aria-label="text formatting"
-      >
-      <ToggleButton value="d" aria-label="d">
-        Dylan
-      </ToggleButton>
-      <ToggleButton value="a" aria-label="a">
-        Austin
-      </ToggleButton>
-      </StyledToggleButtonGroup>
-    </Paper>
+      <Paper>
+        <Typography xs={12} width={150} height={50} align='center'>{props.name}</Typography>
+        <Grid xs={12} align='center' width={150} height={50} item>
+            <img src={props.image} className={props.name} alt={props.name} />
+        </Grid>
+        <Grid xs={12} align='center' item>
+          <StyledToggleButtonGroup
+            size="small"
+            value={formats}
+            onChange={handleFormat}
+            aria-label="text formatting"
+          >
+          <ToggleButton value="d" aria-label="d">
+            Dylan
+          </ToggleButton>
+          <ToggleButton value="a" aria-label="a">
+            Austin
+          </ToggleButton>
+          </StyledToggleButtonGroup>
+        </Grid>
+      </Paper>
+    </Grid>
+        
   );
 }
+
+export default withRoot(ToggleItem)
