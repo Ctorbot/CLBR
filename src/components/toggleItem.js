@@ -1,38 +1,57 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { Paper, Typography } from '@mui/material';
 import withRoot from '../withRoot';
+// import { Octokit } from '@octokit/core';
 
-const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
-  '& .MuiToggleButtonGroup-grouped': {
-    margin: theme.spacing(0.5),
-    border: 0,
-    '&.Mui-disabled': {
-      border: 0,
-    },
-    '&:not(:first-of-type)': {
-      borderRadius: theme.shape.borderRadius,
-    },
-    '&:first-of-type': {
-      borderRadius: theme.shape.borderRadius,
-    },
-  },
-}));
+
+// Octokit.js
+// https://github.com/octokit/core.js#readme
+// const octokit = new Octokit({
+//   auth: 'TOKEN HERE'
+// })
+
+// const file_sha = await getFileShaIfExists(octokit, owner, repo, path);
+
+// await octokit.request('PUT /repos/Ctorbot/CLBR/contents/main/src/data/items.json', {
+//   owner: 'OWNER',
+//   repo: 'CLBR',
+//   path: 'PATH',
+//   message: 'New Collection Log Slot',
+//   committer: {
+//     name: 'CLBR',
+//     email: 'jordandylan52@gmail.com'
+//   },
+//   content: 'bXkgdXBkYXRlZCBmaWxlIGNvbnRlbnRz',
+//   sha: file_sha
+// })
 
 function ToggleItem(props) {
-  // const [alignment, setAlignment] = React.useState('left');
-  const [formats, setFormats] = React.useState(() => ['italic']);
-
-  const handleFormat = (event, newFormats) => {
-    setFormats(newFormats);
+  const [aEnabled, setAEnabled] = React.useState(props.aEnabled);
+  const [dEnabled, setDEnabled] = React.useState(props.dEnabled);
+  
+  const handleAEnabled = (prevState) => {
+    if (process.env.PAT === undefined){
+      console.log("Well it is undefined")
+    }
+    setAEnabled(!prevState);
+    if (prevState === false){
+      props.updateACounter(props.ACounter + props.value)
+    }
+    else{
+      props.updateACounter(props.ACounter - props.value)
+    }
   };
-
-  // const handleAlignment = (event, newAlignment) => {
-  //   setAlignment(newAlignment);
-  // };
+  const handleDEnabled = (prevState) => {
+    setDEnabled(!prevState);
+    if (prevState === false){
+      props.updateDCounter(props.DCounter + props.value)
+    }
+    else{
+      props.updateDCounter(props.DCounter - props.value)
+    }
+  };
 
   return (
     <Grid
@@ -48,19 +67,24 @@ function ToggleItem(props) {
             <img src={props.image} className={props.name} alt={props.name} />
         </Grid>
         <Grid xs={12} align='center' item>
-          <StyledToggleButtonGroup
-            size="small"
-            value={formats}
-            onChange={handleFormat}
-            aria-label="text formatting"
+          <ToggleButton
+            value="Austin"
+            selected={aEnabled}
+            onChange={() => {
+              handleAEnabled(aEnabled);
+            }}
           >
-          <ToggleButton value="d" aria-label="d">
-            Dylan
-          </ToggleButton>
-          <ToggleButton value="a" aria-label="a">
             Austin
           </ToggleButton>
-          </StyledToggleButtonGroup>
+          <ToggleButton
+            value={dEnabled}
+            selected={dEnabled}
+            onChange={() => {
+              handleDEnabled(dEnabled);
+            }}
+          >
+            Dylan
+          </ToggleButton>
         </Grid>
       </Paper>
     </Grid>
