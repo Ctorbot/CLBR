@@ -7,7 +7,7 @@
             "name": "Abyssal orphan",
             "value": 5,
             "image": "./images/Abyssal_orphan.png",
-            "austinCollected": false,
+            "austinCollected": true,
             "dylanCollected": false
         },
         {
