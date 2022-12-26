@@ -6,10 +6,27 @@ import jsonData from './data/items.json';
 import withRoot from './withRoot';
 
 
+let aCollectedValue = 0;
+const aCount = (item) => {
+    if(item.austinCollected === true) {
+      aCollectedValue = aCollectedValue + item.value; // if they do set a new property for your new object called info as the info from item 2 of this arrInfo array
+    }}
+;
+
+let dCollectedValue = 0;
+const dCount = (item) => {
+    if(item.dylanCollected === true) {
+      dCollectedValue = dCollectedValue + item.value; // if they do set a new property for your new object called info as the info from item 2 of this arrInfo array
+    }}
+;
+
+// pass a function to map
+jsonData[0].items.map(aCount);
+jsonData[0].items.map(dCount);
 
 function App() {  
-  const [AclbrCounter, updateACounter] = React.useState(0);
-  const [DclbrCounter, updateDCounter] = React.useState(0);
+  const [AclbrCounter, updateACounter] = React.useState(aCollectedValue);
+  const [DclbrCounter, updateDCounter] = React.useState(dCollectedValue);
   
   return (
       <div>

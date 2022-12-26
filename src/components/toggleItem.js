@@ -32,7 +32,7 @@ function ToggleItem(props) {
   const [dEnabled, setDEnabled] = React.useState(props.dEnabled);
   
   const handleAEnabled = (prevState) => {
-    if (process.env.PAT === undefined){
+    if (process.env['PAT'] === undefined){
       console.log("Well it is undefined")
     }
     setAEnabled(!prevState);
